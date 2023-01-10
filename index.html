@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Clock</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <button class="theme-button">Dark mode</button>
+
+    <div class="analog-clock">
+        <div class="analog-face">
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart-wrapper">
+            <svg class="progress progress-hour" width="100" height="100">
+                <circle class="progress-hour__circle" stroke="black" stroke-width="10" cx="50" cy="50" r="30"
+                    fill="transparent" />
+            </svg>
+            <div class="chart hour-chart"></div>
+        </div>
+        <div class="chart-wrapper">
+            <svg class="progress progress-minute" width="100" height="100">
+                <circle class="progress-minute__circle" stroke="#8b9608" stroke-width="10" cx="50" cy="50" r="30"
+                    fill="transparent" />
+            </svg>
+            <div class="chart minute-chart"></div>
+        </div>
+        <div class="chart-wrapper">
+            <svg class="progress progress-second" width="100" height="100">
+                <circle class="progress-second__circle" stroke="#c20000" stroke-width="10" cx="50" cy="50" r="30"
+                    fill="transparent" />
+            </svg>
+            <div class="chart second-chart"></div>
+        </div>
+    </div>
+
+    <div class="digital-clock">
+        <span class="digital-hour">hh</span>:<span class="digital-minute">mm</span>:<span
+            class="digital-seconds">ss</span>
+        <span class="digital-day">day</span>,
+        <span class="digital-date">date</span>
+        <span class="digital-month">month</span>
+        <span class="digital-year">month</span>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

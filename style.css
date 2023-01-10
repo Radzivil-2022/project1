@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Georama:ital@0;1&display=swap');
+
+:root {
+  --background-color: white;
+  --color: #252525;
+}
+
+html {
+  min-height: 100vh;
+  font-family: "Georama", Courier, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  color: var(--color);
+  background-color: var(--background-color);
+  background-image: url("img/daytime-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease-in;
+}
+html.dark {
+  background: var(--background-color) url('img/night-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--color);
+}
+body {
+  min-height: 100%;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+/* Theme button */
+
+.theme-button{
+  margin-top: 70px;
+  padding: 10px;
+  font: inherit;
+  font-size: 18px;
+  background-color: var(--color);
+  color: var(--background-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Analog clock */
+
+.analog-clock {
+  margin: 70px auto 50px;
+  position: relative;
+  padding: 4rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url("img/clock.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 20px solid var(--background-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #efefef,
+    inset 0 0 10px black, 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.analog-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-3px);
+}
+.analog-face::after {
+  content: "";
+  position: absolute;
+  top: 47.5%;
+  left: 46.6%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color);
+  border-radius: 50%;
+}
+
+/* Hands */
+
+.hand {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: rotate(90deg);
+  transform-origin: 100%;
+}
+.hour-hand {
+  width: 40%;
+  height: 9px;
+  left: 10%;
+  background: var(--color);
+  transform-origin: 100%;
+}
+.minute-hand {
+  height: 6px;
+  background: #8b9608;
+}
+.second-hand {
+  height: 3px;
+  background-color: #c20000;
+}
+
+/* Charts */
+
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto 50px;
+  width: 28rem;
+}
+.chart-wrapper {
+  position: relative;
+}
+.chart {
+  position: absolute;
+  top: 34px;
+  left: 34px
+}
+.progress {
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+.progress-hour circle {
+  stroke: var(--color);
+}
+
+/* Digital clock + date */
+
+.digital-clock {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 95%;
+  bottom: 5%;
+}
+
+/* Smooth appearence */
+
+.analog-face,
+.charts,
+.digital-clock {
+  opacity: 0;
+  visibility: hidden; 
+  transition: opacity 3s cubic-bezier(1, 0, .82, 0), visibility 1s cubic-bezier(1, 0, .82, 0);
+}
+.analog-face.show,
+.charts.show,
+.digital-clock.show {
+  opacity: 1;
+  visibility: visible;
+}
